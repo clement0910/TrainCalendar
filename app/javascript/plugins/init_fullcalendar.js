@@ -9,10 +9,25 @@ import '@fortawesome/fontawesome-free/css/all.css';
 const initFullCalendar = () => {
     const calendarEl = document.getElementById('calendar');
     if (calendarEl) {
+        console.log("Hello world")
         let calendar = new Calendar(calendarEl, {
             plugins: [ dayGridPlugin, timeGridPlugin, listPlugin, bootstrapPlugin ],
             initialView: 'timeGridWeek',
-            themeSystem: 'bootstrap',
+            hiddenDays: [0],
+            dayMaxEventRows: true,
+            eventStartEditable: true,
+            eventDurationEditable: true,
+            eventResizableFromStart:true,
+            allDaySlot: false,
+            slotDuration: '00:15:00',
+            selectable: true,
+            eventOverlap: false,
+            businessHours: {
+                daysOfWeek: [1, 2, 3, 4, 5],
+                startTime: '8:00',
+                endTime: '19:00'
+            },
+            themeSystem: 'standard',
             initialDate: '2018-01-12',
             navLinks: true, // can click day/week names to navigate views
             editable: true,
