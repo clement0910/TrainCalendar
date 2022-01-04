@@ -7,3 +7,10 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
+
+import {initFullCalendar } from "../plugins/init_fullcalendar";
+
+document.addEventListener('turbolinks:load', () => {
+    initFullCalendar();
+});
